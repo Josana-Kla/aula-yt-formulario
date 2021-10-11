@@ -1,0 +1,91 @@
+<!--CRIAÇÃO DE UM FORMULÁRIO PARA CADASTRO DE PESSOAS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">  <!--linkei com o css-->
+
+    <title>CADASTROS</title>
+</head>
+
+<body>
+
+    <div class="campo">
+        <h1 id="titulo">Cadastro de DEVs</h1>
+        <p id="subtitulo"><strong>Complete suas informações:</strong></p>
+        <br>   <!--usado para pular linha-->
+    </div>
+
+    <form>
+        <fieldset class="grupo">   <!-- serve para juntar dois campos em um-->
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label>  <!--o for é para mostrar para onde o label está indicando. A tag strong é para deixar a palavra Nome em negrito-->
+                <input type="text" name="nome" id="nome" required>   <!--required significa que a pessoa não vai poder mandar o formulário se esse campo nome não estiver preenchido-->
+            </div>
+
+            <div class="campo">
+                <label for="sobrenome"><strong>Sobrenome</strong></label>
+                <input type="text" name="sobrenome" id="sobrenome" required>
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <label for="email"><strong>E-mail</strong></label>
+            <input type="email" name="email" id="email" required>   <!--existe um input do tipo email que já faz a verificação para ver se é um email-->
+        </div>
+
+        <div class="campo">
+            <label><strong>De qual lado da aplicação você desenvolve?</strong></label>
+            <label>
+                <input type="radio" name="devweb" value="frontend" checked> Front-End   <!--tem um input do tipo radio, responsável por criar aqueles botões que tem várias escolhas, que tem aquelas bolinhas, normalmente usados para opções de gênero-->
+            </label>                                                                    <!--o checked é usado para que por padrão já venha selecionado o botão escolhido, nesse caso, o do front-end-->
+            <label>
+                <input type="radio" name="devweb" value="backend"> Back-End
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="fullstack"> Full-Stack
+            </label>
+        </div>
+
+        <div class="campo">
+            <label for="senioridade"><strong>Senioridade</strong></label>
+            <select id="senioridade">   <!--select serve para criar um campo com as opções dentro-->
+                <option selected disabled value="">Selecione...</option>   <!--selected é para deixar selecionado como padrão a opção Selecionar, e disabled é para que ele não seja uma opção ativa-->
+                <option>Junior</option>
+                <option>Pleno</option>
+                <option>Senior</option>
+            </select>           
+        </div>
+
+        <fieldset class="grupo">
+            <div id="check">
+                <label><strong>Selecione as tecnologias que você utiliza:</strong></label><br><br>
+                <input type="checkbox" id="tecnologia" name="tecnologia1" value="HTML">   <!--a caixa de seleção criada terá esses valores-->
+                <label for="tecnologia1">HTML</label>                                     <!--usamos label for para indicar que ela está referenciando a caixa de seleção que criamos anteriormente e para que o valor apareça escrito na tela-->
+                <input type="checkbox" id="tecnologia" name="tecnologia2" value="CSS">
+                <label for="tecnologia2">CSS</label>
+                <input type="checkbox" id="tecnologia" name="tecnologia3" value="JavaScript">
+                <label for="tecnologia3">JavaScript</label>
+                <input type="checkbox" id="tecnologia" name="tecnologia4" value="PHP">
+                <label for="tecnologia4">PHP</label>
+                <input type="checkbox" id="tecnologia" name="tecnologia5" value="C#">
+                <label for="tecnologia5">C#</label>
+                <input type="checkbox" id="tecnologia" name="tecnologia6" value="Python">
+                <label for="tecnologia6">Python</label>
+                <input type="checkbox" id="tecnologia" name="tecnologia7" value="Java">
+                <label for="tecnologia7">Java</label>          
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <br>
+            <label><strong>Conte um pouco da sua experiência:</strong></label>
+            <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>   <!--textarea é uma tag usada para escrever textos maiores. Coloquei a quantidade de linhas que o campo vai ter e já estilizei-->
+        </div>
+
+        <button class="botao" type="submit">Concluído</button>   <!--botão do tipo submit, que é para enviar o formulário-->        
+    </form>
+</body>
+</html>
